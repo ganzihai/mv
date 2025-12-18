@@ -23,7 +23,7 @@ import PageLayout from '@/components/PageLayout';
 import { useSite } from '@/components/SiteProvider';
 import VideoCard from '@/components/VideoCard';
 
-// 主内容区大型 KatelyaTV Logo 组件
+// 主内容区大型 GanziTV Logo 组件
 const MainKatelyaLogo = () => {
   return (
     <div className='main-logo-container'>
@@ -31,7 +31,7 @@ const MainKatelyaLogo = () => {
       <div className='logo-background-glow'></div>
 
       {/* 主 Logo */}
-      <div className='main-katelya-logo'>KatelyaTV</div>
+      <div className='main-katelya-logo'>GanziTV</div>
 
       {/* 副标题 */}
       <div className='mt-3 text-center'>
@@ -51,7 +51,7 @@ const MainKatelyaLogo = () => {
   );
 };
 
-// KatelyaTV 底部 Logo 组件
+// GanziTV 底部 Logo 组件
 const BottomKatelyaLogo = () => {
   return (
     <div className='bottom-logo-container'>
@@ -64,9 +64,9 @@ const BottomKatelyaLogo = () => {
       </div>
 
       <div className='text-center'>
-        <div className='bottom-logo'>KatelyaTV</div>
+        <div className='bottom-logo'>GanziTV</div>
         <div className='mt-2 text-sm text-gray-500 dark:text-gray-400 opacity-75'>
-          Powered by KatelyaTV Core
+          Powered by GanziTV Core
         </div>
       </div>
     </div>
@@ -208,7 +208,7 @@ function HomeClient() {
   return (
     <PageLayout>
       <div className='px-4 sm:px-8 lg:px-12 py-4 sm:py-8 overflow-visible'>
-        {/* 主内容区大型 KatelyaTV Logo - 仅在首页显示 */}
+        {/* 主内容区大型 GanziTV Logo - 仅在首页显示 */}
         {activeTab === 'home' && <MainKatelyaLogo />}
 
         {/* 顶部 Tab 切换 */}
