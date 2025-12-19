@@ -1480,9 +1480,9 @@ function PlayPageClient() {
 
   return (
     <PageLayout activePath='/play'>
-      <div className='flex flex-col gap-3 py-4 px-5 lg:px-[3rem] 2xl:px-20'>
-        {/* 第一行：影片标题和操作按钮 */}
-        <div className='py-1 flex items-center justify-between'>
+      <div className='flex flex-col gap-0 md:gap-3 py-0 md:py-4 px-0 md:px-5 lg:px-[3rem] 2xl:px-20'>
+        {/* 第一行：影片标题和操作按钮 - 增加移动端 padding */}
+        <div className='flex items-center justify-between px-4 py-3 md:px-0 md:py-1'>
           <h1 className='text-xl font-semibold text-gray-900 dark:text-gray-100'>
             {videoTitle || '影片标题'}
             {totalEpisodes > 1 && (
@@ -1549,18 +1549,16 @@ function PlayPageClient() {
           >
             {/* 播放器 */}
             <div
-              className={`h-full transition-all duration-300 ease-in-out rounded-xl border border-white/0 dark:border-white/30 ${
+              className={`h-full transition-all duration-300 ease-in-out rounded-none md:rounded-xl border border-white/0 dark:border-white/30 ${
                 isEpisodeSelectorCollapsed ? 'col-span-1' : 'md:col-span-3'
               }`}
             >
-              <div className="-mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0">
+              <div className="w-full">
                 <div className="relative w-full aspect-video lg:h-full">
                   <div
                     ref={artRef}
-                    className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative"
+                    className="bg-black w-full h-full md:rounded-xl overflow-visible md:shadow-lg relative"
                     style={{
-                      paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
-                      paddingRight: 'max(env(safe-area-inset-right), 6px)',
                       zIndex: 99990,
                     }}
                     >
@@ -1621,9 +1619,9 @@ function PlayPageClient() {
               </div>
             </div>
 
-            {/* 选集和换源 - 在移动端始终显示，在 lg 及以上可折叠 */}
+            {/* 选集和换源 - 在移动端始终显示，在 lg 及以上可折叠 - 增加移动端 padding */}
             <div
-              className={`h-[300px] lg:h-full md:overflow-hidden transition-all duration-300 ease-in-out ${
+              className={`px-4 md:px-0 h-[300px] lg:h-full md:overflow-hidden transition-all duration-300 ease-in-out ${
                 isEpisodeSelectorCollapsed
                   ? 'md:col-span-1 lg:hidden lg:opacity-0 lg:scale-95'
                   : 'md:col-span-1 lg:opacity-100 lg:scale-100'
@@ -1646,11 +1644,11 @@ function PlayPageClient() {
           </div>
         </div>
 
-        {/* 详情展示 */}
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+        {/* 详情展示 - 增加移动端 padding */}
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-4 px-4 md:px-0 pb-8 md:pb-0'>
           {/* 文字区 */}
           <div className='md:col-span-3'>
-            <div className='p-6 flex flex-col min-h-0'>
+            <div className='p-0 md:p-6 flex flex-col min-h-0'>
               {/* 标题 */}
               <h1 className='text-3xl font-bold mb-2 tracking-wide flex items-center flex-shrink-0 text-center md:text-left w-full'>
                 {videoTitle || '影片标题'}
