@@ -1558,9 +1558,11 @@ function PlayPageClient() {
                   ref={artRef}
                   className='bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative z-50'
                   style={{
-                    paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+                    paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
+                    paddingRight: 'max(env(safe-area-inset-right), 6px)',
                   }}
-                /></div>
+                />
+              </div>
 
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
