@@ -222,7 +222,7 @@ const PageLayout = ({ children, activePath = '/' }: PageLayoutProps) => {
       </div>
 
       {/* 移动端底部导航 */}
-      <div className='md:hidden'>
+      <div className={`md:hidden ${activePath === '/play' ? 'pointer-events-none opacity-0' : ''}`}>
         <MobileBottomNav activePath={activePath} />
       </div>
     </div>
