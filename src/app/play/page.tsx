@@ -1553,11 +1553,14 @@ function PlayPageClient() {
                 isEpisodeSelectorCollapsed ? 'col-span-1' : 'md:col-span-3'
               }`}
             >
-              <div className='relative w-full h-[300px] lg:h-full'>
+              <div className='relative w-full aspect-video lg:h-full'>
                 <div
                   ref={artRef}
-                  className='bg-black w-full h-full rounded-xl overflow-hidden shadow-lg'
-                ></div>
+                  className='bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative z-50'
+                  style={{
+                    paddingBottom: 'env(safe-area-inset-bottom, 0px)',
+                  }}
+                /></div>
 
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
