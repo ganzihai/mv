@@ -1553,16 +1553,19 @@ function PlayPageClient() {
                 isEpisodeSelectorCollapsed ? 'col-span-1' : 'md:col-span-3'
               }`}
             >
-              <div className="relative w-full aspect-video lg:h-full">
-                <div
-                  ref={artRef}
-                  className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative"
-                  style={{
-                    paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
-                    paddingRight: 'max(env(safe-area-inset-right), 6px)',
-                  }}
-                >
-              </div>
+              <div className="-mx-4 sm:-mx-6 lg:mx-0 px-4 sm:px-6 lg:px-0">
+                <div className="relative w-full aspect-video lg:h-full">
+                  <div
+                    ref={artRef}
+                    className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative"
+                    style={{
+                      paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
+                      paddingRight: 'max(env(safe-area-inset-right), 6px)',
+                      zIndex: 99990,
+                    }}
+                    >
+                  </div>
+                </div>
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
                   <SkipController
