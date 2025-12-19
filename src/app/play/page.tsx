@@ -1556,7 +1556,7 @@ function PlayPageClient() {
               <div className="relative w-full aspect-video lg:h-full">
                 <div
                   ref={artRef}
-                  className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative z-50"
+                  className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative"
                   style={{
                     paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
                     paddingRight: 'max(env(safe-area-inset-right), 6px)',
