@@ -1,26 +1,22 @@
-/* player-fix.css — 为 Artplayer 保证 safe-area 和可见性 */
-.artplayer, .artplayer * {
-  box-sizing: border-box;
-}
+/* src/styles/player-fix.css */
 
 /* 保证播放器外层不裁剪控制按钮 */
 .artplayer {
   overflow: visible !important;
-  z-index: 99990 !important; /* 保证播放器在页面上层（若底部导航层级更高，可再调高） */
+  z-index: 99990 !important;
 }
 
-/* 控制栏底部留白，兼容 iPhone 刘海/手势区 */
+/* 关键点：
+   这里是对 .art-controls (控制栏) 加 padding，而不是对 video 容器加 padding。
+   这样视频画面是全屏的，但按钮会向内缩进，避免被圆角屏幕遮挡。
+*/
 .artplayer .art-controls,
 .artplayer .art-control,
 .artplayer .art-controls .art-control {
   padding-bottom: max(env(safe-area-inset-bottom), 8px) !important;
-  padding-right: max(env(safe-area-inset-right), 6px) !important;
+  padding-right: max(env(safe-area-inset-right), 12px) !important; /* 稍微增加一点像素值(6px -> 12px)以确保绝对安全 */
 }
 
-/* 强制把单个控制按钮的 z-index 提高，避免被父容器遮挡 */
 .artplayer .art-controls .art-control {
   z-index: 99991 !important;
 }
-
-/* 如果你的底部导航使用了 backdrop 或 fixed 覆盖，尽量降低它的 z-index（选择器按需改） */
-/* 例如：.mobile-bottom-nav { z-index: 10 !important; } */
