@@ -1561,7 +1561,7 @@ function PlayPageClient() {
                     paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
                     paddingRight: 'max(env(safe-area-inset-right), 6px)',
                   }}
-                />
+                >
               </div>
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
