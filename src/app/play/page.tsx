@@ -1553,17 +1553,16 @@ function PlayPageClient() {
                 isEpisodeSelectorCollapsed ? 'col-span-1' : 'md:col-span-3'
               }`}
             >
-              <div className='relative w-full aspect-video lg:h-full'>
+              <div className="relative w-full aspect-video lg:h-full">
                 <div
                   ref={artRef}
-                  className='bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative z-50'
+                  className="bg-black w-full h-full rounded-xl overflow-visible shadow-lg relative z-50"
                   style={{
                     paddingBottom: 'max(env(safe-area-inset-bottom), 8px)',
                     paddingRight: 'max(env(safe-area-inset-right), 6px)',
                   }}
                 />
               </div>
-
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
                   <SkipController
