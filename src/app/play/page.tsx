@@ -1566,17 +1566,19 @@ function PlayPageClient() {
                 </div>
                 {/* 跳过片头片尾控制器 */}
                 {currentSource && currentId && videoTitle && (
-                  <SkipController
-                    source={currentSource}
-                    id={currentId}
-                    title={videoTitle}
-                    artPlayerRef={artPlayerRef}
-                    currentTime={currentPlayTime}
-                    duration={videoDuration}
-                    isSettingMode={isSkipSettingMode}
-                    onSettingModeChange={setIsSkipSettingMode}
-                    onNextEpisode={handleNextEpisode}
-                  />
+                  <div className="relative z-[100000]">
+                    <SkipController
+                      source={currentSource}
+                      id={currentId}
+                      title={videoTitle}
+                      artPlayerRef={artPlayerRef}
+                      currentTime={currentPlayTime}
+                      duration={videoDuration}
+                      isSettingMode={isSkipSettingMode}
+                      onSettingModeChange={setIsSkipSettingMode}
+                      onNextEpisode={handleNextEpisode}
+                    />
+                  </div>
                 )}
 
                 {/* 换源加载蒙层 */}
